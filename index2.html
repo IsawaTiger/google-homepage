@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <head>
     <title>Google Homepage adaptation</title>
-    <style>
+    <link rel="stylesheet" href="css/reset.css">
+    <style> 
+        body{
+            font-size: small;
+            font-family: arial,sans-serif;
+        }   
         .header{
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -47,6 +52,34 @@
             outline: none;
             background: -webkit-linear-gradient(top,#4387fd,#4683ea);
         }
+        #hplogo{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 140px;
+        }
+        .searchbar{
+            display: grid;
+            grid-template-columns: 1fr 8fr;
+            align-content: center;
+            place-items: center;
+            border: 1px solid #dfe1e5;
+            border-radius: 24px;
+            height: 44px;
+            width: 482px;
+            margin: auto;
+            margin-top: 23px;
+        }
+        #lupe{
+            display: block;
+            color: #9aa0a6;
+            fill:currentColor;
+        }
+        #search-input{
+            border: none;
+            outline: none;
+            width: 370px;
+        }
     </style>
 </head>
 <body>
@@ -68,7 +101,15 @@
         </div>
     </div>
     <div class="main">
-        
+        <img alt="Google" height="92" id="hplogo" src="https://www.google.de/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        <div class="searchbar">
+            <div id="lupe">
+                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="-15 -20 60 60"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+            </div>
+            <div>
+                <input type="test" title="Suche" id="search-input">
+            </div>
+        </div>
     </div>
     <div class="footer">
 
