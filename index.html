@@ -1,95 +1,240 @@
 <!DOCTYPE html>
-<body>
-    <style>
-        #header{
+<head>
+    <title>Google Homepage adaptation</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <style> 
+        body{
+            font-size: small;
+            font-family: arial,sans-serif;
             display: grid;
-            grid-template-rows: 1fr, 1fr;
-            
+            grid-template-rows: 40px 1fr auto;
+            height: 100vh;
         }
-        #left-links{
-            display: inline-flex;
-            flex-wrap: wrap;
+        a:hover{
+            text-decoration-line: underline !important;
         }
-        #left-links > a{
-            margin: 15px;
-            text-decoration: none;
+        button:hover{
+            border: 1px solid #dadce0 !important;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1) !important;
+            color: #202124 !important;
+        }  
+        .header{
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            grid-template-areas:"header-left" 
+                                "header-right";
+            padding: 12px;
+        }
+        .header-right{
+            justify-self: end;
+            align-self: start;
+        }
+        #header-left a{
+            display: inline-block;
+            padding-left: 7px;
             color: #000;
             opacity: 0.75;
-            font-size: 13px;
-            font-family: arial,sans-serif;
-
-        }
-        #right-links{
-            display: inline-flex;
-            flex-wrap: wrap;
-            margin: 0 0 0 auto;
-        }
-        #right-links > a{
-            margin: 15px;
             text-decoration: none;
-            color: #000;
-            opacity: 0.75;
+            font-family: Arial, Helvetica, sans-serif;
             font-size: 13px;
-            font-family: arial,sans-serif;
         }
-        #anmelden-button{
-           background-image: linear-gradient(90deg,#4387fd,#4683ea);
-           border: 0;
-           font-family: arial,sans-serif;
-           color: rgb(255, 255, 255);
-           height: 30px;
-           border-radius: 5%;
+        .header-left{
+            align-self: center;
+        }
+        #header-right a{
+            display: inline-block;
+            padding-left: 7px;
+            color: #000;
+            opacity: 1;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+        .image{
+            width: 23px;
+            transform: translateY(-25%);
+        }
+        #anmelden {
+            display: inline-block;
+            line-height: 28px;
+            padding: 0 12px;
+            margin-left: 7px;
+            border-radius: 2px;
+            border: 1px solid #4285f4;
+            font-weight: bold;
+            outline: none;
+            background: -webkit-linear-gradient(top,#4387fd,#4683ea);
         }
         #hplogo{
             display: block;
             margin-left: auto;
             margin-right: auto;
-            margin-top: 170px;
+            margin-top: 140px;
         }
-        #bar-margin{
-            position: relative;
-            margin-left: 274,5px;
-            margin-right: 274,5px;
-        }
-        #search-bar{
-            display: flex;
+        .searchbar{
+            display: grid;
+            grid-template-columns: 1fr 10fr;
+            align-content: center;
+            place-items: center;
             border: 1px solid #dfe1e5;
-            box-shadow: none;
             border-radius: 24px;
+            height: 44px;
+            width: 482px;
+            margin: auto;
+            margin-top: 23px;
+        }
+        .searchbar:hover{
+            border: 1px solid #eceff5 !important;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.1) !important;
+        }
+        #lupe{
+            color: #9aa0a6;
+            fill:currentColor;
         }
         #search-input{
-            height: 7px;
+            border: none;
+            outline: none;
+            width: 370px;
         }
-
+        .button-search{
+            display: block;
+            text-align: -webkit-center;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 20px;
+        }
+        button{
+            height: 36px;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
+            margin: 11px 4px;
+            padding: 0 16px;
+            background-color: #f8f9fa;
+            font-family: arial,sans-serif;
+            color: #3c4043;
+            font-size: 14px;
+            text-align: center;
+        }
+        .footer{
+            display: grid;
+            grid-template-rows: 40px 40px 40px 40px;
+            grid-template-columns: 1fr;
+            grid-template-areas: 
+            "deu"
+            "co2"
+            "dat"
+            "wer";
+            width: 100%;
+            background-color:#f2f2f2;
+            border-top: 1px solid #dadce0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: rgba(0,0,0,.54);
+        }
+        .footer a{
+            text-decoration: none;
+            color: rgba(0,0,0,.54);
+        }
+        .d1{align-self: center; text-indent: 25px; grid-area: deu; font-size: 15px;}
+        .d2{justify-self: center; align-self: center; grid-area: co2;}
+        .d3{justify-self: center; align-self: center; grid-area: dat;}
+        .d4{justify-self: center; align-self: center; grid-area: wer;}
+        @media (min-width: 807px){
+            .footer{
+                display: grid;
+                grid-template-rows: 0px 40px 40px 40px;
+                grid-template-columns: 1fr 2fr;
+                grid-template-areas: 
+                ". ."
+                "deu deu"
+                "co2 dat"
+                "wer wer";
+            }
+            .d3{
+                text-indent: 25px;
+                direction: rtl;
+                justify-self:end;
+            }
+            .d4{
+                text-indent: 25px;
+                justify-self: start;
+            }
+        }
+        @media (min-width: 1210px){
+            .footer{
+                display: grid;
+                grid-template-rows: 0px 0px 40px 40px;
+                grid-template-columns: 2fr 1fr 2fr;
+                grid-template-areas: 
+                ". . ."
+                ". . ."
+                "deu deu deu"
+                "wer co2 dat";
+            }
+            .d3{
+                text-indent: 25px;
+                direction: rtl;
+                justify-self:end;
+            }
+            .d4{
+                text-indent: 25px;
+                justify-self: start;
+            }
+        }
     </style>
-    <div id="header">
-        <div id="left-links">
-            <a href="https://about.google/?fg=1&utm_source=google-DE&utm_medium=referral&utm_campaign=hp-header">Über Google</a>
-            <a href="https://store.google.com/DE?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=de-DE">Store</a>
-        </div>
-        <div id="right-links">
-            <a href="">Gmail</a>
-            <a href="">Bilder</a>
-            <a href="">Grid</a>
-            <button id="anmelden-button">Anmelden</button>
-        </div>
-    </div>
-    <div id="main">
-        <div id="image">
-            <img alt="Google" height="92" id="hplogo" src="https://www.google.de/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
-        </div>
-        <div id="bar-margin">
-            <div id="search-bar">
-                <svg focusable="false" xmlns="http://www.w3.org/2000/svg"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
-                <input type="text" title="Suche" maxlength="2048" id="search-input">
-                
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div id="header-left">
+                <a href="">Über Google</a>
+                <a href="">Store</a>
             </div>
         </div>
-        <div id="search-button">
-
+        <div class="header-right">
+            <div id="header-right">
+                <a href="">Gmail</a>
+                <a href="">Bilder</a>
+                <a id="grid" href=""><img class="image" align="middle" src="https://icon-library.com/images/google-menu-icon/google-menu-icon-9.jpg" alt="grid"></a>
+                <a href="" id="anmelden" style="color: white;">Anmelden</a>
+ 
+            </div>
         </div>
     </div>
-    <div id="footer">
-
+    <div class="main">
+        <img alt="Google" height="92" id="hplogo" src="https://www.google.de/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        <div class="searchbar">
+            <div id="lupe">
+                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
+            </div>
+            <div>
+                <input type="test" title="Suche" id="search-input">
+            </div>
+        </div>
+        <div>
+            <div class="button-search">
+                <button>Google Suche</button>
+                <button>Auf gut Glück!</button>
+            </div>    
+        </div>
+    </div>
+    <div class="footer">
+        <div class="d1">
+            Deutschland
+        </div>
+        <div class="d2">
+            <a href="">CO2-neutral seit 2007</a>
+        </div>
+        <div class="d3">
+            <a href="">Datenschutzerklärung</a>
+            <a href="" style="padding-left: 5px;">Nutzungsbedingungen</a>
+            <a href="" style="padding-left: 5px;">Einstellungen</a>       
+        </div>
+        <div class="d4">
+            <a href="">Werbeprogramme</a>
+            <a href="" style="padding-left: 5px;">Unternehmen</a>
+            <a href="" style="padding-left: 5px;">Wie funktioniert die Google Suche?</a>     
+        </div>
     </div>
 </body>
