@@ -9,7 +9,15 @@
             display: grid;
             grid-template-rows: 40px 1fr auto;
             height: 100vh;
-        }   
+        }
+        a:hover{
+            text-decoration-line: underline !important;
+        }
+        button:hover{
+            border: 1px solid #dadce0 !important;
+            box-shadow: 0 1px 1px rgba(0,0,0,.1) !important;
+            color: #202124 !important;
+        }  
         .header{
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -75,6 +83,10 @@
             margin: auto;
             margin-top: 23px;
         }
+        .searchbar:hover{
+            border: 1px solid #eceff5 !important;
+            box-shadow: 0px 0px 10px rgba(0,0,0,.1) !important;
+        }
         #lupe{
             color: #9aa0a6;
             fill:currentColor;
@@ -94,12 +106,13 @@
         }
         button{
             height: 36px;
-            border: none;
-            outline: none;
+            border: 1px solid #f8f9fa;
+            border-radius: 4px;
             margin: 11px 4px;
             padding: 0 16px;
             background-color: #f8f9fa;
             font-family: arial,sans-serif;
+            color: #3c4043;
             font-size: 14px;
             text-align: center;
         }
@@ -116,10 +129,14 @@
             background-color:#f2f2f2;
             border-top: 1px solid #dadce0;
             font-family: Arial, Helvetica, sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             color: rgba(0,0,0,.54);
         }
-        .d1{align-self: center; text-indent: 25px; grid-area: deu;}
+        .footer a{
+            text-decoration: none;
+            color: rgba(0,0,0,.54);
+        }
+        .d1{align-self: center; text-indent: 25px; grid-area: deu; font-size: 15px;}
         .d2{justify-self: center; align-self: center; grid-area: co2;}
         .d3{justify-self: center; align-self: center; grid-area: dat;}
         .d4{justify-self: center; align-self: center; grid-area: wer;}
@@ -171,16 +188,16 @@
     <div class="header">
         <div class="header-left">
             <div id="header-left">
-                <a href="https://about.google/?fg=1&utm_source=google-DE&utm_medium=referral&utm_campaign=hp-header">Über Google</a>
-                <a href="https://store.google.com/DE?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=de-DE">Store</a>
+                <a href="">Über Google</a>
+                <a href="">Store</a>
             </div>
         </div>
         <div class="header-right">
             <div id="header-right">
-                <a href="https://mail.google.com/mail/?tab=wm&ogbl">Gmail</a>
-                <a href="https://www.google.de/imghp?hl=de&tab=wi&ogbl">Bilder</a>
-                <a id="grid" href="https://www.google.de/intl/de/about/products?tab=wh"><img class="image" align="middle" src="https://icon-library.com/images/google-menu-icon/google-menu-icon-9.jpg" alt="grid"></a>
-                <a href="https://accounts.google.com/ServiceLogin?hl=de&passive=true&continue=https://www.google.de/&ec=GAZAAQ" id="anmelden" style="color: white;">Anmelden</a>
+                <a href="">Gmail</a>
+                <a href="">Bilder</a>
+                <a id="grid" href=""><img class="image" align="middle" src="https://icon-library.com/images/google-menu-icon/google-menu-icon-9.jpg" alt="grid"></a>
+                <a href="" id="anmelden" style="color: white;">Anmelden</a>
  
             </div>
         </div>
@@ -207,13 +224,17 @@
             Deutschland
         </div>
         <div class="d2">
-            CO2-neutral seit 2007
+            <a href="">CO2-neutral seit 2007</a>
         </div>
         <div class="d3">
-            Datenschutzerklärung   Nutzungsbedingungen   Einstellungen
+            <a href="">Datenschutzerklärung</a>
+            <a href="" style="padding-left: 5px;">Nutzungsbedingungen</a>
+            <a href="" style="padding-left: 5px;">Einstellungen</a>       
         </div>
         <div class="d4">
-            Werbeprogramme   Unternehmen   Wie funktioniert die Google Suche? 
+            <a href="">Werbeprogramme</a>
+            <a href="" style="padding-left: 5px;">Unternehmen</a>
+            <a href="" style="padding-left: 5px;">Wie funktioniert die Google Suche?</a>     
         </div>
     </div>
 </body>
